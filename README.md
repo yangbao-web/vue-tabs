@@ -2,6 +2,29 @@
 
 > A Vue.js project
 
+```
+<Tabs defaultActiveKey="1">
+  <TabPane tab="tab 1" tabKey="1">
+    tab1
+  </TabPane>
+  <TabPane tab="tab 2" tabKey="2">
+    tab2
+  </TabPane>
+  <TabPane tab="tab 3" tabKey="3">
+    tab3
+  </TabPane>
+</Tabs>
+```
+
+## 单文件组件里使用全局组件
+
+```
+import Vue from 'vue'
+Vue.component('myComponent', {
+  template: '<div>A custom component!</div>'
+})
+```
+
 ## Build Setup
 
 ``` bash
