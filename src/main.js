@@ -10,6 +10,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   data: {
+    eventVue: new Vue()
   },
   router,
   template: '<App/>',

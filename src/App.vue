@@ -2,12 +2,12 @@
   <div id="app">
 	<Tabs defaultActiveKey="1">
 		<TabPane tab="tab 1" tabKey="1">
-          <CustomInput ref="customInput"/>
-          <button @click="getDate">获取值</button>
-        </TabPane>
+      <CustomInput ref="customInput"/>
+      <button @click="getDate">获取值</button>
+    </TabPane>
 		<TabPane tab="tab 2" tabKey="2">
-          <my-component></my-component>
-        </TabPane>
+      <my-component></my-component>
+    </TabPane>
 		<TabPane tab="tab 3" tabKey="3">tab3</TabPane>
 	</Tabs>
   </div>

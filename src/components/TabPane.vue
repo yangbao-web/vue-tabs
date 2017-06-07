@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="{ activeContent: tabKey == activeKey, notActive: tabKey != activeKey}">
+  <div class="tabpane" v-bind:style="sliderItemStyle" v-bind:class="{ activeContent: tabKey == activeKey, notActive: tabKey != activeKey}">
     <slot></slot>
   </div>
 </template>
@@ -11,14 +11,17 @@ export default {
   props: ['tab', 'tabKey'],
   data () {
     return {
-      activeKey: ''
+      activeKey: '',
+      pageWidth: '',
+      sliderItemStyle: {}
     }
   },
   beforeMount () {
     this.activeKey = this.$parent.activeKey || this.$parent.defaultActiveKey
   },
   mounted () {
-    console.log('==2', this.$parent.activeKey)
+    var tabContainerWidth = parseInt(this.$parent.$refs.tabContainer.offsetWidth)
+    this.sliderItemStyle.width = tabContainerWidth + 'px'
   },
   methods: {
     switchTabHandle (key) {
@@ -33,6 +36,10 @@ export default {
     display: block
   }
   .notActive{
-    display: none
+    //display: none
+  }
+  .tabpane{
+    float: left;
+    width: 100%;
   }
 </style>
